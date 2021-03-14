@@ -6,12 +6,12 @@ class RoomsController < ApplicationController
 
   def create
   @room = Room.new(room_params)
-  if @room.save
-    redirect_to rppt_path
-  else
-    render :new
+    if @room.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
-
   private
   
   def room_params
